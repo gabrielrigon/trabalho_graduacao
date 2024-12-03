@@ -55,8 +55,8 @@ GEM
     builder (3.2.4)
     byebug (11.0.1)
     cancancan (1.17.0)
-    celluloid (0.16.0)
-      timers (~> 4.0.0)
+    celluloid (0.18.0)
+      timers (~> 4)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -109,7 +109,6 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (4.1.0)
-    hitimes (2.0.0)
     humanize_boolean (0.0.2)
       i18n
     i18n (0.9.5)
@@ -165,6 +164,8 @@ GEM
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     rack (1.6.13)
+    rack-protection (2.1.0)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     railroady (1.6.0)
@@ -216,9 +217,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rdoc (4.3.0)
-    redis (3.3.5)
-    redis-namespace (1.6.0)
-      redis (>= 3.0.4)
+    redis (4.5.1)
     request_store (1.5.0)
       rack (>= 1.4)
     responders (2.4.1)
@@ -243,12 +242,11 @@ GEM
       elasticsearch (>= 5)
       hashie
     selectize-rails (0.12.6)
-    sidekiq (3.4.2)
-      celluloid (~> 0.16.0)
-      connection_pool (~> 2.2, >= 2.2.0)
-      json (~> 1.0)
-      redis (~> 3.2, >= 3.2.1)
-      redis-namespace (~> 1.5, >= 1.5.2)
+    sidekiq (5.2.8)
+      connection_pool (~> 2.2, >= 2.2.2)
+      rack (< 2.1.0)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 5)
     sidetiq (0.6.3)
       celluloid (>= 0.14.1)
       ice_cube (= 0.11.1)
@@ -278,8 +276,7 @@ GEM
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    timers (4.0.4)
-      hitimes
+    timers (4.3.3)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
@@ -343,7 +340,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   searchkick
   selectize-rails
-  sidekiq (= 3.4.2)
+  sidekiq (= 5.2.8)
   sidetiq
   simple-navigation
   simple_form
